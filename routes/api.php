@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,4 +17,22 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
+});
+
+
+
+/*
+|--------------------------------------------------------------------------
+| Authentication Routes (Mobile Verification Based)
+|--------------------------------------------------------------------------
+|
+*/
+Route::prefix('auth')->group(function () {
+    Route::post('/check-mobile', [AuthController::class, 'checkMobile']);
+    Route::post('/check-code', [AuthController::class, 'checkVerifyCode']);
+    Route::post('/register', [AuthController::class, 'register']);
+    Route::post('/login-password', [AuthController::class, 'loginWithPassword']);
+    Route::post('/resend-code', [AuthController::class, 'resendCode']);
+    Route::post('/forgot-password', [AuthController::class, 'forgotPassword']);
+    Route::post('/set-password', [AuthController::class, 'setPassword']);
 });
