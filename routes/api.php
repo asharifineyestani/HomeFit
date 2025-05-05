@@ -2,8 +2,10 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Api\AuthController;
-use App\Http\Controllers\Api\WeightController;
+use App\Http\Controllers\API\AuthController;
+use App\Http\Controllers\API\WeightController;
+use App\Http\Controllers\API\FitnessQuestionController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -43,3 +45,6 @@ Route::prefix('auth')->group(function () {
 Route::middleware('auth:sanctum')->group(function () {
     Route::post('/weights', [WeightController::class, 'storeOrUpdate']);
 });
+
+
+Route::get('/fitness-questions', [FitnessQuestionController::class, 'index']);
