@@ -28,7 +28,7 @@ class BodySizeResource extends JsonResource
             'thigh'        => $this->thigh,
             'calf'         => $this->calf,
             'ankle'        => $this->ankle,
-            'measured_at'  => $this->measured_at,
+            'measured_date'  => $this->measured_date,
             'created_at'   => $this->created_at,
             'updated_at'   => $this->updated_at,
         ];

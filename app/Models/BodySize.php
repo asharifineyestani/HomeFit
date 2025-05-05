@@ -24,11 +24,11 @@ class BodySize extends Model
         'thigh',
         'calf',
         'ankle',
-        'measured_at',
+        'measured_date',
     ];
 
     protected $casts = [
-        'measured_at' => 'datetime',
+        'measured_date' => 'date',
         'neck' => 'decimal:2',
         'shoulders' => 'decimal:2',
         'arm_relaxed' => 'decimal:2',

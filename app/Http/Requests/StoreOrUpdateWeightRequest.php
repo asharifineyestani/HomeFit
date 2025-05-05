@@ -15,7 +15,7 @@ class StoreOrUpdateWeightRequest extends FormRequest
     {
         return [
             'weight' => 'required|numeric|min:20|max:300',
-            'measured_at' => 'nullable|date',
+            'measured_date' => 'nullable|date',
         ];
     }
 
@@ -26,7 +26,7 @@ class StoreOrUpdateWeightRequest extends FormRequest
             'weight.numeric'    => 'وزن باید یک عدد باشد.',
             'weight.min'        => 'وزن نمی‌تواند کمتر از ۲۰ کیلوگرم باشد.',
             'weight.max'        => 'وزن نمی‌تواند بیشتر از ۳۰۰ کیلوگرم باشد.',
-            'measured_at.date'  => 'فرمت تاریخ وارد شده نامعتبر است.',
+            'measured_date.date'  => 'فرمت تاریخ وارد شده نامعتبر است.',
         ];
     }
 }

@@ -17,8 +17,8 @@ class WeightController extends Controller
         $user = $request->user();
 
         // اگر تاریخ ارسال نشده بود، امروز در نظر گرفته می‌شود
-        $measuredDate = $request->filled('measured_at')
-            ? Carbon::parse($request->input('measured_at'))->toDateString()
+        $measuredDate = $request->filled('measured_date')
+            ? Carbon::parse($request->input('measured_date'))->toDateString()
             : now()->toDateString();
 
         // بررسی وجود رکورد قبلی برای همان تاریخ و کاربر

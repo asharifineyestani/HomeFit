@@ -17,7 +17,7 @@ class Weight extends Model
 
     protected $casts = [
         'weight' => 'decimal:2',
-        'measured_at' => 'datetime',
+        'measured_date' => 'date',
     ];
 
     public function user()
