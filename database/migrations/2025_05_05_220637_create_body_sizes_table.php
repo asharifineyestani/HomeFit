@@ -27,7 +27,7 @@ return new class extends Migration
             $table->decimal('thigh', 5, 2)->nullable();
             $table->decimal('calf', 5, 2)->nullable();
             $table->decimal('ankle', 5, 2)->nullable();
-            $table->timestamp('measured_at');
+            $table->timestamp('measured_date');
             $table->timestamps();
         });
     }
