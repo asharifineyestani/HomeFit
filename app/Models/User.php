@@ -20,7 +20,15 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
+        'mobile',
         'password',
+        'gender',
+        'height',
+        'blood_group',
+        'birth_date',
+        'city_id',
+        'referral_source',
+        'avatar_url',
     ];
 
     /**
@@ -39,7 +47,21 @@ class User extends Authenticatable
      * @var array<string, string>
      */
     protected $casts = [
-        'email_verified_at' => 'datetime',
         'password' => 'hashed',
+        'email_verified_at' => 'datetime',
+        'mobile_verified_at' => 'datetime',
+        'birth_date' => 'date',
+        'height' => 'decimal:2',
     ];
+
+
+    public function bodySizes()
+    {
+        return $this->hasMany(BodySize::class);
+    }
+
+    public function weights()
+    {
+        return $this->hasMany(Weight::class);
+    }
 }

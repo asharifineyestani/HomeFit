@@ -19,6 +19,13 @@ return new class extends Migration
             $table->string('mobile')->unique();
             $table->timestamp('mobile_verified_at')->nullable();
             $table->string('password');
+            $table->enum('gender', ['male', 'female'])->nullable();
+            $table->decimal('height', 5, 2)->nullable();
+            $table->enum('blood_group', ['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-'])->nullable();
+            $table->date('birth_date')->nullable();
+            $table->string('city_id')->nullable();
+            $table->string('referral_source')->nullable(); # نحوه‌ی آشنایی
+            $table->string('avatar_url')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
