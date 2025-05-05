@@ -15,9 +15,9 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->decimal('weight', 5, 2); // e.g., 85.40 kg
-            $table->timestamp('measured_at');
+            $table->date('measured_date'); // ← این باید قبل از unique باشه
+            $table->unique(['user_id', 'measured_date']); // ← بعد از اون
             $table->timestamps();
-            $table->unique(['user_id', 'measured_date']);
         });
     }
 

@@ -12,7 +12,7 @@ class Weight extends Model
     protected $fillable = [
         'user_id',
         'weight',
-        'measured_at',
+        'measured_date',
     ];
 
     protected $casts = [

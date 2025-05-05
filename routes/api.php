@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\AuthController;
+use App\Http\Controllers\Api\WeightController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,4 +36,10 @@ Route::prefix('auth')->group(function () {
     Route::post('/resend-code', [AuthController::class, 'resendCode']);
     Route::post('/forgot-password', [AuthController::class, 'forgotPassword']);
     Route::post('/set-password', [AuthController::class, 'setPassword']);
+});
+
+
+
+Route::middleware('auth:sanctum')->group(function () {
+    Route::post('/weights', [WeightController::class, 'storeOrUpdate']);
 });
